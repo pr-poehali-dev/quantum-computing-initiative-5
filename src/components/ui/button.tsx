@@ -3,28 +3,27 @@ import { Slot, Slottable } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
-import { px } from "../utils";
 
 const buttonVariants = cva(
-  "inline-flex relative uppercase border font-mono cursor-pointer items-center font-medium has-[>svg]:px-3 justify-center gap-2 whitespace-nowrap font-medium ease-out transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive [clip-path:polygon(var(--poly-roundness)_0,calc(100%_-_var(--poly-roundness))_0,100%_0,100%_calc(100%_-_var(--poly-roundness)),calc(100%_-_var(--poly-roundness))_100%,0_100%,0_calc(100%_-_var(--poly-roundness)),0_var(--poly-roundness))]",
+  "inline-flex relative cursor-pointer items-center font-medium justify-center gap-2 whitespace-nowrap ease-out transition-all duration-300 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-ring/60 select-none",
   {
     variants: {
       variant: {
         default:
-          "bg-background border-primary text-primary-foreground [&>[data-border]]:bg-primary [box-shadow:inset_0_0_54px_0px_var(--tw-shadow-color)] shadow-[#EBB800] hover:shadow-[#EBB800]/80",
+          "bg-primary/10 border border-primary/50 text-white hover:bg-primary/20 hover:border-primary/80 shadow-[0_0_20px_rgba(59,130,246,0.15)] hover:shadow-[0_0_32px_rgba(59,130,246,0.35)] rounded-lg font-sans tracking-wide",
         destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90 border-destructive",
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90 border border-destructive rounded-lg",
         outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+          "border border-white/20 bg-transparent text-white hover:bg-white/5 hover:border-white/40 rounded-lg",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 border-secondary",
-        ghost: "hover:bg-accent hover:text-accent-foreground border-transparent",
+          "bg-white/5 text-white hover:bg-white/10 border border-white/10 rounded-lg",
+        ghost: "hover:bg-white/5 text-white/70 hover:text-white border-transparent rounded-lg",
         link: "text-primary underline-offset-4 hover:underline border-transparent",
       },
       size: {
-        default: "h-16 px-6 text-base",
-        sm: "h-14 px-6 text-sm",
-        lg: "h-18 px-8 text-lg",
+        default: "h-12 px-7 text-sm",
+        sm: "h-10 px-5 text-sm",
+        lg: "h-14 px-9 text-base",
         icon: "h-10 w-10",
       },
     },
@@ -48,34 +47,12 @@ function Button({
   }) {
   const Comp = asChild ? Slot : "button";
 
-  const polyRoundness = 16;
-  const hypotenuse = polyRoundness * 2;
-  const hypotenuseHalf = polyRoundness / 2 - 1.5;
-
   return (
     <Comp
-      style={{
-        "--poly-roundness": px(polyRoundness),
-      } as React.CSSProperties}
       data-slot="button"
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     >
-      <span
-        data-border="top-left"
-        style={
-          { "--h": px(hypotenuse), "--hh": px(hypotenuseHalf) } as React.CSSProperties
-        }
-        className="absolute inline-block w-[var(--h)] top-[var(--hh)] left-[var(--hh)] h-[2px] -rotate-45 origin-top -translate-x-1/2"
-      />
-      <span
-        data-border="bottom-right"
-        style={
-          { "--h": px(hypotenuse), "--hh": px(hypotenuseHalf) } as React.CSSProperties
-        }
-        className="absolute w-[var(--h)] bottom-[var(--hh)] right-[var(--hh)] h-[2px] -rotate-45 translate-x-1/2"
-      />
-
       <Slottable>{children}</Slottable>
     </Comp>
   );

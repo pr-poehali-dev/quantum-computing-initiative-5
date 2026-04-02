@@ -1,4 +1,4 @@
-import { GL } from "./gl";
+import { VpnBackground } from "./VpnBackground";
 import { Pill } from "./Pill";
 import { Button } from "./ui/button";
 import { useState } from "react";
@@ -9,14 +9,14 @@ export function Hero() {
 
   return (
     <div className="flex flex-col h-svh justify-between relative z-10">
-      <GL hovering={hovering} />
+      <VpnBackground hovering={hovering} />
       <Header />
 
       <div className="pb-20 mt-auto text-center relative">
         <Pill className="mb-6">БЕЗОПАСНО • БЫСТРО • АНОНИМНО</Pill>
-        <h1 className="text-5xl sm:text-6xl md:text-7xl font-sentient leading-tight">
+        <h1 className="text-5xl sm:text-6xl md:text-7xl font-hero leading-tight">
           Свобода в сети —<br />
-          <i className="font-light text-primary">без границ</i>
+          <span className="text-primary font-light">без границ</span>
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[480px] mx-auto">
           Super VPN защищает ваше соединение, скрывает IP-адрес и открывает доступ к любому контенту в мире
@@ -28,7 +28,7 @@ export function Hero() {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
           >
-            [Подключиться в Telegram]
+            Подключиться в Telegram
           </Button>
         </a>
         <a className="contents sm:hidden" href="#telegram">
@@ -38,7 +38,7 @@ export function Hero() {
             onMouseEnter={() => setHovering(true)}
             onMouseLeave={() => setHovering(false)}
           >
-            [Подключиться в Telegram]
+            Подключиться в Telegram
           </Button>
         </a>
 

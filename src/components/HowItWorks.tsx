@@ -22,9 +22,9 @@ export function HowItWorks() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <p className="font-mono text-xs uppercase text-primary/80 tracking-widest mb-4">Как это работает</p>
-          <h2 className="text-3xl md:text-4xl font-sentient">
+          <h2 className="text-3xl md:text-4xl font-hero font-semibold">
             Подключение за<br />
-            <i className="font-light">3 простых шага</i>
+            <span className="font-light text-primary">3 простых шага</span>
           </h2>
         </div>
 
