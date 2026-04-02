@@ -19,7 +19,7 @@ export function Hero() {
           <span className="text-primary font-light">без границ</span>
         </h1>
         <p className="font-mono text-sm sm:text-base text-foreground/60 text-balance mt-8 max-w-[480px] mx-auto">
-          Super VPN защищает ваше соединение, скрывает IP-адрес и открывает доступ к любому контенту в мире
+          Ogrizok VPN шифрует трафик, скрывает IP и помогает сохранять доступ к привычным сервисам
         </p>
 
         <a className="contents max-sm:hidden" href="#telegram">
@@ -42,10 +42,10 @@ export function Hero() {
           </Button>
         </a>
 
-        <div className="flex justify-center gap-8 mt-10 font-mono text-xs text-foreground/40">
-          <span>🔒 Шифрование AES-256</span>
-          <span>⚡ До 1 Гбит/с</span>
-          <span>🌍 50+ стран</span>
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-2 mt-10 font-mono text-xs text-foreground/40">
+          <span>🔒 TLS 1.3 шифрование</span>
+          <span>⚡ Низкая задержка</span>
+          <span>📱 Прямо в Telegram</span>
         </div>
       </div>
     </div>

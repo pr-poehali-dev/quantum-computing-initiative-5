@@ -9,13 +9,13 @@ export function TelegramCTA() {
           <div className="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center mx-auto mb-6">
             <Icon name="Send" size={28} className="text-primary" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-sentient mb-4">
+          <h2 className="text-3xl md:text-4xl font-hero font-semibold mb-4">
             Готовы начать?
           </h2>
           <p className="text-foreground/50 font-mono text-sm mb-8 max-w-sm mx-auto">
             Первые 3 дня — бесплатно. Подключитесь прямо сейчас через Telegram-бота.
           </p>
-          <a href="https://t.me/SuperVPN_bot" target="_blank" rel="noopener noreferrer">
+          <a href="https://t.me/OgrizokVPN_bot" target="_blank" rel="noopener noreferrer">
             <Button size="lg" className="gap-2">
               <Icon name="Send" size={16} />
               Открыть Telegram-бота
