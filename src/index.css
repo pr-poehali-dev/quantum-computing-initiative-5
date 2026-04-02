@@ -6,44 +6,44 @@
 
 @layer base {
   :root {
-    --background: 0 0% 0%;
+    --background: 222 47% 5%;
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 0%;
+    --card: 222 47% 7%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 0%;
+    --popover: 222 47% 7%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 48 100% 50%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
+    --secondary: 222 30% 12%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 222 30% 12%;
+    --muted-foreground: 220 20% 60%;
 
-    --accent: 0 0% 15%;
+    --accent: 222 30% 15%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 26%;
-    --input: 0 0% 26%;
-    --ring: 48 100% 50%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 217 91% 60%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 5%;
+    --sidebar-background: 222 47% 5%;
     --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 48 100% 50%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent: 222 30% 12%;
     --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 15%;
-    --sidebar-ring: 48 100% 50%;
+    --sidebar-border: 220 30% 20%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -54,7 +54,7 @@
 
   body {
     @apply text-foreground;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter", Arial, Helvetica, sans-serif;
     background: transparent;
   }
 
@@ -82,7 +82,7 @@
   }
 
   .font-sentient {
-    font-family: 'PT Serif', serif;
+    font-family: "PT Serif", serif;
   }
 
   .shadow-glow {
@@ -106,9 +106,13 @@
 
 /* Vignette effect overlay */
 #webgl::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.6) 100%);
+  background: radial-gradient(
+    ellipse at center,
+    transparent 30%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
 }
